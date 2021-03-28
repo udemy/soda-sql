@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import sys
-from setuptools import setup, find_namespace_packages
+from setuptools import setup, find_namespace_packages, sic
 
 if sys.version_info < (3, 7):
     print('Error: Soda SQL requires at least Python 3.7')
@@ -23,7 +23,7 @@ requires = [
 
 setup(
     name=package_name,
-    version=package_version,
+    version=sic(package_version),
     packages=find_namespace_packages(include=["sodasql*"]),
     install_requires=requires,
     entry_points={
