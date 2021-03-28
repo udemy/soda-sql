@@ -8,12 +8,12 @@ if sys.version_info < (3, 7):
     sys.exit(1)
 
 package_name = "soda-sql-bigquery"
-package_version = "2.1.0b1"
+package_version = "2.1.0-alpha1"
 # TODO Add proper description
 description = "Soda SQL BigQuery"
 
 requires = [
-    'soda-sql-core==2.1.0b1',
+    'soda-sql-core=={}'.format(package_version),
     'google-cloud-bigquery>=2.5.0'
 ]
 # TODO Fix the params

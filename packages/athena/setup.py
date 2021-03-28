@@ -8,12 +8,12 @@ if sys.version_info < (3, 7):
     sys.exit(1)
 
 package_name = "soda-sql-athena"
-package_version = "2.1.0b1"
+package_version = "2.1.0-alpha1"
 # TODO Add proper description
 description = "Soda SQL Amazon Athena"
 
 requires = [
-    'soda-sql-core==2.1.0b1',
+    'soda-sql-core=={}'.format(package_version),
     'PyAthena>=2.2.0'
 ]
 # TODO Fix the params

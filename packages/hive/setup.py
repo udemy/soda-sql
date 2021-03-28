@@ -8,12 +8,12 @@ if sys.version_info < (3, 7):
     sys.exit(1)
 
 package_name = "soda-sql-hive"
-package_version = "2.1.0b1"
+package_version = "2.1.0-alpha1"
 # TODO Add proper description
 description = "Soda SQL Apache Hive"
 
 requires = [
-    'soda-sql-core==2.1.0b1',
+    'soda-sql-core==2.1.0-alpha3-alpha2b1',
     'PyHive==0.6.3',
     'thrift==0.13.0'
 

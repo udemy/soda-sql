@@ -27,7 +27,7 @@ from sodasql.scan.scan_builder import ScanBuilder
 from sodasql.scan.warehouse import Warehouse
 from sodasql.scan.warehouse_yml_parser import (WarehouseYmlParser,
                                                read_warehouse_yml_file)
-from sodasql.version import SODA_SQL_VERSION
+from sodasql.__version__ import SODA_SQL_VERSION
 
 LoggingHelper.configure_for_cli()
 

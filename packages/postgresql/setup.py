@@ -8,12 +8,12 @@ if sys.version_info < (3, 7):
     sys.exit(1)
 
 package_name = "soda-sql-postgresql"
-package_version = "2.1.0b1"
+package_version = "2.1.0-alpha1"
 # TODO Add proper description
 description = "Soda SQL PostgreSQL"
 
 requires = [
-    'soda-sql-core==2.1.0b1',
+    'soda-sql-core=={}'.format(package_version),
     'psycopg2-binary>=2.8.5'
 ]
 # TODO Fix the params

@@ -8,13 +8,13 @@ if sys.version_info < (3, 7):
     sys.exit(1)
 
 package_name = "soda-sql-redshift"
-package_version = "2.1.0b1"
+package_version = "2.1.0-alpha1"
 # TODO Add proper description
 description = "Soda SQL Redshift"
 
 requires = [
-    'soda-sql-core==2.1.0b1',
-    'soda-sql-postgresql==2.1.0b1'
+    'soda-sql-core=={}'.format(package_version),
+    'soda-sql-postgresql=={}'.format(package_version)
 ]
 # TODO Fix the params
 setup(
