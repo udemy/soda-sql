@@ -47,6 +47,10 @@ class BigQueryDialect(Dialect):
             'BIGQUERY_ACCOUNT_INFO': '...'
         }
 
+    def default_analyze_templates(self, params: dict):
+        params.setdefault('default','select #column_name# from #table_name# limit 1000')
+        return params
+
     def create_connection(self):
         try:
             credentials = Credentials.from_service_account_info(self.account_info_dict)

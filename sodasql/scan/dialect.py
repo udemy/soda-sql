@@ -87,6 +87,9 @@ class Dialect:
     def default_env_vars(self, params: dict):
         pass
 
+    def default_analyze_templates(self, params: dict):
+        pass
+
     def sql_connection_test(self):
         return "select 1"
 

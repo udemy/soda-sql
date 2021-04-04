@@ -47,6 +47,10 @@ class SnowflakeDialect(Dialect):
             'SNOWFLAKE_PASSWORD': params.get('password', 'YOUR_SNOWFLAKE_PASSWORD_GOES_HERE')
         }
 
+    def default_analyze_templates(self, params: dict):
+        params.setdefault('default', 'select #column_name# from #table_name# limit 1000')
+        return params
+
     def create_connection(self):
         try:
             conn = connector.connect(

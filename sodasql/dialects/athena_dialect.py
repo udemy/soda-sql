@@ -45,6 +45,10 @@ class AthenaDialect(Dialect):
             'ATHENA_SECRET_ACCESS_KEY': '...'
         }
 
+    def default_analyze_templates(self, params: dict):
+        params.setdefault('default','select #column_name# from #table_name# limit 1000')
+        return params
+
     def create_connection(self):
         # pyathena.connect will do the role resolving
         # aws_credentials = self.aws_credentials.resolve_role('soda_scan')
