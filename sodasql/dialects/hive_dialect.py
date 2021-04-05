@@ -37,7 +37,7 @@ class HiveDialect(Dialect):
         }
 
     def default_analyze_templates(self, params: dict):
-        params.setdefault('_default','select #column_name# from #table_name# limit 1000')
+        params.setdefault(self.analyze_templates_default, 'select #column_name# from #table_name# limit 1000')
         return params
 
     def sql_tables_metadata_query(self, limit: str = 10, filter: str = None):

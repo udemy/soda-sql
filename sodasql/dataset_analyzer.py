@@ -38,8 +38,7 @@ class DatasetAnalyzer:
         dialect = warehouse.dialect
         qualified_table_name = dialect.qualify_table_name(table_name)
         analyze_templates = warehouse.analyze_templates
-        analyze_template_default = analyze_templates.get('_default')
-        analyze_template = analyze_template_default
+        analyze_template = analyze_templates[dialect.analyze_templates_default]
 
         analyze_results: List[ColumnAnalysisResult] = []
 
@@ -73,7 +72,7 @@ class DatasetAnalyzer:
                     validity_format_count_fields.append(count_field)
 
                 if table_name in analyze_templates:
-                    analyze_template = analyze_templates.get(table_name)
+                    analyze_template = analyze_templates[table_name]
 
                 analyze_dataset_query = analyze_template\
                     .replace('#column_name#', qualified_column_name)\

@@ -45,6 +45,8 @@ class Dialect:
     data_type_decimal = "REAL"
     data_type_date = "DATE"
 
+    analyze_templates_default = '_default'
+
     def __init__(self, type: str):
         self.type = type
 
