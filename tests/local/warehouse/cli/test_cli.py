@@ -106,7 +106,8 @@ class TestCli(SqlTestCase):
             '-u', 'sodasql',
             '-p', 'sodasql',
             '-w', 'local_postgres_tutorial', 'postgres',
-            '-a', '{"DEMODATA":"select #column_name# from #table_name# where COUNTRY=\'US\' limit 10",'
+            '-a', '{"_default":"select #column_name# from #table_name# limit 1000",'
+                  '"demodata":"select #column_name# from #table_name# where COUNTRY=\'US\' limit 10",'
                   '"test_table":"select #column_name# from #table_name# limit 5"}'
         ])
         self.assertEqual(result.exit_code, 0)

@@ -67,7 +67,7 @@ class SQLServerDialect(Dialect):
         }
 
     def default_analyze_templates(self, params: dict):
-        params.setdefault('default','select top 1000 #column_name# from #table_name#')
+        params.setdefault('_default','select top 1000 #column_name# from #table_name#')
         return params
 
     def sql_tables_metadata_query(self, limit: str = 10, filter: str = None):

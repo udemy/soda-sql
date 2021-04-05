@@ -46,7 +46,7 @@ class AthenaDialect(Dialect):
         }
 
     def default_analyze_templates(self, params: dict):
-        params.setdefault('default','select #column_name# from #table_name# limit 1000')
+        params.setdefault('_default','select #column_name# from #table_name# limit 1000')
         return params
 
     def create_connection(self):

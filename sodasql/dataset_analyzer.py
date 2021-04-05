@@ -38,7 +38,7 @@ class DatasetAnalyzer:
         dialect = warehouse.dialect
         qualified_table_name = dialect.qualify_table_name(table_name)
         analyze_templates = warehouse.analyze_templates
-        analyze_template_default = analyze_templates.get('default')
+        analyze_template_default = analyze_templates.get('_default')
         analyze_template = analyze_template_default
 
         analyze_results: List[ColumnAnalysisResult] = []
@@ -72,8 +72,8 @@ class DatasetAnalyzer:
                     count_field = f'COUNT(CASE WHEN {regexp_like} THEN 1 END)'
                     validity_format_count_fields.append(count_field)
 
-                if table_name in analyze_templates or table_name.upper() in analyze_templates:
-                    analyze_template = analyze_templates.get(table_name) or analyze_templates.get(table_name.upper())
+                if table_name in analyze_templates:
+                    analyze_template = analyze_templates.get(table_name)
 
                 analyze_dataset_query = analyze_template\
                     .replace('#column_name#', qualified_column_name)\
