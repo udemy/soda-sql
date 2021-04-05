@@ -28,6 +28,8 @@ ATHENA = 'athena'
 SQLSERVER = 'sqlserver'
 HIVE = 'hive'
 
+ANALYZE_DEFAULT_SCRIPT = 'select #column_name# from #table_name# limit 1000'
+
 ALL_WAREHOUSE_TYPES = [POSTGRES,
                        SNOWFLAKE,
                        REDSHIFT,
@@ -90,7 +92,8 @@ class Dialect:
         pass
 
     def default_analyze_templates(self, params: dict):
-        pass
+        params.setdefault(self.analyze_templates_default, ANALYZE_DEFAULT_SCRIPT)
+        return params
 
     def sql_connection_test(self):
         return "select 1"

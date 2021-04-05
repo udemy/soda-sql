@@ -48,8 +48,7 @@ class BigQueryDialect(Dialect):
         }
 
     def default_analyze_templates(self, params: dict):
-        params.setdefault(self.analyze_templates_default, 'select #column_name# from #table_name# limit 1000')
-        return params
+        return super().default_analyze_templates(params)
 
     def create_connection(self):
         try:
