@@ -46,9 +46,6 @@ class PostgresDialect(Dialect):
             'POSTGRES_PASSWORD': params.get('password', 'Eg abc123')
         }
 
-    def default_analyze_templates(self, params: dict):
-        return super().default_analyze_templates(params)
-
     def sql_tables_metadata_query(self, limit: str = 10, filter: str = None):
         return (f"SELECT table_name \n"
                 f"FROM information_schema.tables \n"

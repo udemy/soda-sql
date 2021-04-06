@@ -36,9 +36,6 @@ class HiveDialect(Dialect):
             'HIVE_PASSWORD': params.get('password', 'hive_password_goes_here')
         }
 
-    def default_analyze_templates(self, params: dict):
-        return super().default_analyze_templates(params)
-
     def sql_tables_metadata_query(self, limit: str = 10, filter: str = None):
         return (f"use {self.database.lower()};\n"
                 f"show tables;")

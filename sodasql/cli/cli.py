@@ -48,7 +48,7 @@ def main():
 @click.option('-u', '--username',  required=False, default=None, help='The username to use for the connection, through env_var(...)')
 @click.option('-p', '--password',  required=False, default=None, help='The password to use for the connection, through env_var(...)')
 @click.option('-w', '--warehouse', required=False, default=None, help='The warehouse name')
-@click.option('-a', '--analyze_templates', required=False, default=None, help='Allows to customize the sql select statements dataset to be used for column analyze scripts. Default is select column from table limit 1000 or equivalent')
+@click.option('-a', '--analyze_templates', required=False, default=None, help='The dictionary that contains the sql query templatesf for tables to be used to analyze columns')
 def create(warehouse_type: str,
            file: Optional[str],
            warehouse: Optional[str],

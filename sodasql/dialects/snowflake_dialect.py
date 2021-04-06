@@ -47,9 +47,6 @@ class SnowflakeDialect(Dialect):
             'SNOWFLAKE_PASSWORD': params.get('password', 'YOUR_SNOWFLAKE_PASSWORD_GOES_HERE')
         }
 
-    def default_analyze_templates(self, params: dict):
-        return super().default_analyze_templates(params)
-
     def create_connection(self):
         try:
             conn = connector.connect(

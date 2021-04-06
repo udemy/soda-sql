@@ -62,9 +62,6 @@ class RedshiftDialect(PostgresDialect):
             'REDSHIFT_PASSWORD': '...'
         }
 
-    def default_analyze_templates(self, params: dict):
-        return super().default_analyze_templates(params)
-
     def create_connection(self):
         try:
             if self.password:
